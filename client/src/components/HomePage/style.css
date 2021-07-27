@@ -1,0 +1,33 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-box {
+  width: 50%;
+  text-align: center;
+}
+
+.content-box h1 {
+  margin-bottom: 1.5rem;
+}
+
+.boxes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box-link {
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.box-link h3 {
+  margin: 1rem 0;
+}
