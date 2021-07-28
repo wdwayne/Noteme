@@ -7,7 +7,7 @@
 }
 
 .content-box {
-  width: 50%;
+  width: 60%;
   text-align: center;
 }
 
@@ -22,12 +22,87 @@
 }
 
 .box-link {
+  width: 20rem;
   text-align: center;
-  border: 2px solid #ccc;
-  border-radius: 10px;
   cursor: pointer;
+  background-color: #fff;
+  border-radius: 45px;
+  background: linear-gradient(145deg, #e1e1e1, #ffffff);
+  box-shadow: 23px 23px 45px #d7d7d7, -23px -23px 45px #ffffff;
+}
+
+.box-link img {
+  width: 100%;
 }
 
 .box-link h3 {
   margin: 1rem 0;
+}
+
+@media (max-width: 1024px) {
+  .content-box {
+    margin-top: 6.5rem;
+  }
+  .content-box {
+    width: 70%;
+    text-align: center;
+  }
+
+  .box-link {
+    width: 20rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 815px) {
+  .content-box {
+    margin-top: 6.5rem;
+  }
+  .content-box {
+    width: 80%;
+    text-align: center;
+  }
+
+  .box-link {
+    width: 18rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .content-box {
+    margin-top: 6.5rem;
+  }
+  .content-box {
+    width: 80%;
+    text-align: center;
+  }
+  .boxes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box-link {
+    width: 18rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .content-box {
+    margin-top: 6.5rem;
+  }
+  .content-box {
+    width: 80%;
+    text-align: center;
+  }
+  .boxes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box-link {
+    width: 14rem;
+    margin-bottom: 1.5rem;
+  }
 }

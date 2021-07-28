@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AddNote() {
+function NoteForm() {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function AddNote() {
     )
 }
 
-export default AddNote
+export default NoteForm
