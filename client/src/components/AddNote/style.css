@@ -7,7 +7,7 @@
   border-radius: 45px;
   background: linear-gradient(145deg, #ffffff, #e1e1e1);
   box-shadow: 13px 13px 30px #646464, -13px -13px 30px #ffffff;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
   padding: 10px;
 }
 
@@ -25,3 +25,28 @@
 }
 
 /* #ffffff, #e1e1e1 */
+
+@media (max-width: 1025px) {
+  .addBtn {
+    top: 65px;
+    left: 560px;
+  }
+}
+@media (max-width: 815px) {
+  .addBtn {
+    top: 65px;
+    left: 450px;
+  }
+}
+@media (max-width: 550px) {
+  .addBtn {
+    top: 65px;
+    left: 340px;
+  }
+}
+@media (max-width: 415px) {
+  .addBtn {
+    top: 65px;
+    left: 250px;
+  }
+}

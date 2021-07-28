@@ -6,4 +6,18 @@
 
 body {
   background-image: url("./assets/background.png");
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+@media (max-width: 550px) {
+  .container {
+    width: 75%;
+    margin: 0 auto;
+  }
 }

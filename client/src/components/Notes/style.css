@@ -1,0 +1,31 @@
+.noteGrid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 20px 10px 80px 10px;
+}
+
+@media (max-width: 1025px) {
+  .noteGrid {
+  }
+}
+
+@media (max-width: 815px) {
+  .noteGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .noteGrid {
+    display: block;
+    margin: 10px 0 105px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .noteGrid {
+    display: block;
+    margin: 10px 0 105px 0;
+  }
+}

@@ -1,10 +1,14 @@
-import React from 'react'
+import './style.css'
 
-function Note() {
+function Note( { item }) {
     return (
-        <div>
-            
-        </div>
+
+            <div className="box">
+                <h3>{ item.title }</h3>
+                <div className="para">
+                    <p>{ item.body }</p>
+                </div>
+            </div>
     )
 }
 

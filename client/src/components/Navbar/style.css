@@ -8,6 +8,7 @@ nav {
   border-radius: 45px;
   background: linear-gradient(145deg, #e1e1e1, #ffffff);
   box-shadow: 23px 23px 45px #d7d7d7, -23px -23px 45px #ffffff;
+  z-index: 2000;
 }
 
 .nav-ul {
@@ -33,9 +34,11 @@ nav {
   z-index: 3;
 }
 
-.nav-ul li a.is-active {
+.is-active {
   color: #333;
-  border-bottom: 3px solid #333;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #339, #f0c);
+  border-image-slice: 1;
 }
 
 /* .nav-ul .slide {
@@ -47,3 +50,39 @@ nav {
   z-index: 2;
   background-color: #623be4;
 } */
+
+@media (max-width: 1025px) {
+  nav {
+    width: 350px;
+    height: 60px;
+    left: 350px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 815px) {
+  nav {
+    width: 340px;
+    height: 60px;
+    left: 210px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  nav {
+    width: 340px;
+    height: 60px;
+    left: 100px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  nav {
+    width: 340px;
+    height: 60px;
+    left: 10px;
+    bottom: 20px;
+  }
+}
