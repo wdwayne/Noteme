@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import note from "../../assets/note.png";
 import todo from "../../assets/todo.png"
 
@@ -9,14 +11,14 @@ function Home() {
             <div className="content-box">
                 <h1>Where to?</h1>
                 <div className="boxes">
-                <div className="box-link">
+                    <Link to='todos' className="box-link">
                         <img src={todo} alt="Notes" className="box-link-img" />
                         <h3>To Do List</h3>
-                    </div>
-                    <div className="box-link">
+                    </Link>
+                    <Link to='notes' className="box-link">
                         <img src={note} alt="Notes" className="box-link-img" />
                         <h3>Notes</h3>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </div>

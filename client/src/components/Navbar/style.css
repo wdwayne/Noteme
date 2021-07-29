@@ -41,15 +41,10 @@ nav {
   border-image-slice: 1;
 }
 
-/* .nav-ul .slide {
+.hidden {
   position: absolute;
-  display: inline-flex;
-  height: 5px;
-  bottom: 5px;
-  transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1.05);
-  z-index: 2;
-  background-color: #623be4;
-} */
+  left: -1000px;
+}
 
 @media (max-width: 1025px) {
   nav {

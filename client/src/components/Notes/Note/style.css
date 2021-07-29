@@ -1,6 +1,6 @@
 .box {
   height: 300px;
-  margin: 20px 10px;
+  margin: 15px 10px 30px 10px;
   padding: 10px 5px;
   flex-direction: column;
   font-size: 1.2rem;
@@ -38,6 +38,24 @@
   height: 200px;
   margin: 10px 35px;
   z-index: 1000;
+}
+
+.noteBtns {
+  width: 110px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 68px;
+  background: linear-gradient(145deg, #e1e1e1, #ffffff);
+  box-shadow: 24px 24px 48px #cdcdcd, -24px -24px 48px #ffffff;
+}
+
+.noteBtns button {
+  border: none;
+  font-size: 30px;
+  padding: 5px 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 @media (max-width: 1025px) {
