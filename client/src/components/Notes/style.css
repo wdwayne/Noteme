@@ -1,31 +1,38 @@
 .noteGrid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   margin: 20px 10px 120px 10px;
 }
 
+.emptyImg {
+  max-width: 500px;
+  margin-bottom: 150px;
+}
+
+.emptyImg img {
+  width: 100%;
+}
+
 @media (max-width: 1025px) {
-  .noteGrid {
-  }
 }
 
 @media (max-width: 815px) {
   .noteGrid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 550px) {
   .noteGrid {
     display: block;
-    margin: 10px 0 105px 0;
+    margin: 10px 0 140px 0;
   }
 }
 
 @media (max-width: 420px) {
-  .noteGrid {
+  /* .noteGrid {
     display: block;
     margin: 10px 0 105px 0;
-  }
+  } */
 }

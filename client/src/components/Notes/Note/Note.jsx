@@ -3,7 +3,7 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 
 import './style.css'
 
-function Note( { item }) {
+function Note( { item, onDelete }) {
     return (
 
             <div className="box">
@@ -14,7 +14,7 @@ function Note( { item }) {
                 <div className="center">
                     <div className="noteBtns">
                         <button><FiEdit /></button>
-                        <button><RiDeleteBin6Line /></button>
+                        <button onClick={() => onDelete(item.id)} ><RiDeleteBin6Line /></button>
                     </div>
                 </div>
             </div>

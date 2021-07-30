@@ -5,14 +5,14 @@
 }
 
 body {
+  overflow-x: hidden !important;
   background-image: url("./assets/background.png");
   height: 100%;
-  overflow-x: hidden;
 }
 
 .container {
-  width: 85%;
-  margin: 0 auto;
+  max-width: 85%;
+  margin: 0px auto 0 auto;
 }
 .center {
   display: flex;
@@ -21,8 +21,11 @@ body {
 }
 
 @media (max-width: 550px) {
+  body {
+    overflow-x: hidden !important;
+  }
   .container {
-    width: 75%;
+    max-width: 75%;
     margin: 0 auto;
   }
 }
