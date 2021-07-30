@@ -32,11 +32,11 @@ function Notes() {
     }
 
     return (
-        <div className="container NotesPage">
+        <div className="NotesPage">
             <NoteForm  onAdd={onAdd} />
             <h1>All Notes</h1>
             {items ? (
-                <div className="noteGrid">
+                <div className="grid">
                     {items.map(item => (
                         <Note key={item.id} item={ item } onDelete={onDelete} />
                     ))}

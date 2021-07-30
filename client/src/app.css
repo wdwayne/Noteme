@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 2px solid red; */
 }
 
 body {
@@ -20,6 +21,12 @@ body {
   align-items: center;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 20px 10px 120px 10px;
+}
+
 @media (max-width: 550px) {
   body {
     overflow-x: hidden !important;
@@ -27,5 +34,19 @@ body {
   .container {
     max-width: 75%;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 815px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .grid {
+    display: block;
+    margin: 10px 0 140px 0;
   }
 }

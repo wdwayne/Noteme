@@ -20,6 +20,7 @@ function NoteForm({ onAdd }) {
         ))
     }
 
+    console.log(note)
     const onSubmit = (e) => {
         e.preventDefault(); 
         

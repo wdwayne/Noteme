@@ -7,20 +7,23 @@ import './app.css';
 function App() {
 
     return (
-        <Router>
-            <Switch>
-                <Route path='/' exact>
-                    <Home />
-                </Route>
-                <Route path='/notes'><
-                    Notes />
-                </Route>
-                <Route path='/todos'>
-                    <Todos />
-                </Route>
-            </Switch>
-            <NavBar />
-        </Router>
+        <div className="container">
+            <Router>
+                <Switch>
+                    <Route path='/' exact>
+                        <Home />
+                    </Route>
+                    <Route path='/notes'><
+                        Notes />
+                    </Route>
+                    <Route path='/todos'>
+                        <Todos />
+                    </Route>
+                </Switch>
+                <NavBar />
+            </Router>
+        </div>
+        
     )
 }
 
