@@ -16,13 +16,19 @@ function Todo({ list, onDelete }) {
         ))
     }
 
+    const onRemove = (id) => {
+        setLtItem( prevItems => (
+            prevItems.filter(item => item.id !== id)
+        ))
+    }
+
     return (
         <div className="listBox">
             <h2>{ list.name }</h2>
             <ListInput onAdd={onAdd} />
             <ul className="chckList">
                 {ltItem.map(lItem => (
-                    <ListItem lItem={ lItem } />
+                    <ListItem key={ltItem.id} lItem={ lItem } onRemove={onRemove} />
                 ))}
             </ul>
             <div className="listBtn">

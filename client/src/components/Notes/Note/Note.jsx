@@ -1,7 +1,7 @@
 import { FiEdit } from 'react-icons/fi';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 
-import './style.css'
+import './style.css';
 
 function Note( { item, onDelete }) {
     return (

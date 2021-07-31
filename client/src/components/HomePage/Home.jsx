@@ -7,7 +7,7 @@ import './style.css'
 
 function Home() {
     return (
-        <div className="home">
+        <div className="home center">
             <div className="content-box">
                 <h1>Where to?</h1>
                 <div className="boxes">
