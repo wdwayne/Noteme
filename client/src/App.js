@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { PageTransition } from '@steveeeie/react-page-transition';
 
 import { Home, NavBar, Notes, Todos } from "./components";
 
 import './app.css';
 
 function App() {
-
     return (
         <div className="container">
-            <Router>
+            <Router >
                 <Switch>
                     <Route path='/' exact>
                         <Home />

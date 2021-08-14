@@ -7,8 +7,7 @@
   box-shadow: 10px 10px 45px #d7d7d7, -1px -1px 45px #ffffff;
 }
 
-.itemForm input,
-.itemForm textarea {
+.itemForm input {
   width: 100%;
   border: none;
   padding: 4px;
@@ -16,6 +15,8 @@
   outline: none;
   resize: none;
   font-size: 1rem;
+  font-family: "Zilla Slab", serif;
+  font-weight: 550;
 }
 
 .itemForm button {

@@ -1,38 +1,38 @@
-import { v4 as uuid } from 'uuid';
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Todo from './Todo/Todo';
 import ListForm from './listForm/ListForm';
+import { getLists } from '../../actions/listActions';
+import empty from "../../assets/empty.jpg";
 
 function Todos() {
-    const [lists, setLists] = useState([
-        { id: uuid(), name: 'shopping list', listItems: [{id: uuid(), itemName: 'rice'}] },
-        { id: uuid(), name: 'to do list', listItems: [{id: uuid(), itemName: 'wash'}] },
-        { id: uuid(), name: 'cooking list', listItems: [{id: uuid(), itemName: 'Butter'}] },
-        
-    ])
+    const lists = useSelector(state => state.lists);
+    const dispatch = useDispatch();
 
-    const onAdd = (list) => {
-        setLists(prevList => (
-            [...prevList, list]
-        ))
-    }
-
-    const onDelete = (id) => {
-        setLists(prevLists => (
-            prevLists.filter(item => item.id !== id)
-        ))
-    }
+    useEffect(() => {
+        dispatch(getLists())
+    }, [lists])
 
 
     return (
         <div className="listPage">
-            <ListForm onAdd={onAdd} />
-            <div className="grid">
-                {lists.map( list => (
-                    <Todo key={list.id} list={ list } onDelete={onDelete} />
-                ))}
-            </div>
+            <ListForm />
+            {lists.length !== 0 ? (
+                <div className="grid">
+                    {lists.map( indevidualList => (
+                        <Todo key={indevidualList._id} indevidualList={ indevidualList } />
+                    ))}
+                </div>
+            ) : 
+                <div className="center">
+                    <div className="emptyImg">
+                        <img src={empty} alt="" />
+                        <h2>use the form above to add a new Todo List</h2>
+                    </div>
+                </div>
+            }
+            
         </div>
     )
 }

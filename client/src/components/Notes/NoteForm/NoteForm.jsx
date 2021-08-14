@@ -1,35 +1,43 @@
-import { useState } from 'react';
-import { v4 as uuid } from 'uuid';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
+import { createNote, editNote } from '../../../actions/noteActions';
 import './style.css'
 
-function NoteForm({ onAdd }) {
+function NoteForm({ currentId, setCurrentId }) {
+    const [newNote, setNewNote] = useState({title: "",body: ""});
+    const note = useSelector(state => currentId && state.notes.find(note => note._id === currentId));
+    const dispatch = useDispatch();
 
-    const [note, setNote] = useState({
-        title: "",
-        body: ""
-    })
+    useEffect(() => {
+        if(note) setNewNote({...note});
+    }, [note])
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-
-        setNote( prevNote => (
+        setNewNote( prevNote => (
             {...prevNote,
-                id: uuid(),
             [name]: value}
         ))
     }
 
-    console.log(note)
-    const onSubmit = (e) => {
-        e.preventDefault(); 
-        
-        onAdd(note);
-
-        setNote({
+    const clear = () => {
+        setNewNote({
             title: "",
             body: ""
-        })
+        });
+        setCurrentId(null);
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        if(currentId) {
+            dispatch(editNote(newNote));
+        }else {
+            dispatch(createNote(newNote));
+        }
+        clear();
     }
 
     return (
@@ -37,14 +45,14 @@ function NoteForm({ onAdd }) {
             <form className="noteForm" onSubmit={onSubmit} autoComplete="off">
                 <input type="text" name="title" 
                 placeholder="Title...." 
-                value={note.title} 
+                value={newNote.title} 
                 onChange={handleChange}
                 required/>
 
                 <textarea name="body" cols="20" rows="3" 
                 placeholder="Place Note here....." 
                 onChange={handleChange} 
-                value={note.body}
+                value={newNote.body}
                 required></textarea>
 
                 <button type="submit">Add</button>

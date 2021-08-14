@@ -16,7 +16,12 @@
   background: transparent;
   outline: none;
   resize: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-family: "Zilla Slab", serif;
+  font-weight: 500;
+}
+.noteForm input {
+  font-weight: 600;
 }
 
 .noteForm button {

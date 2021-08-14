@@ -1,37 +1,34 @@
 import { useState } from 'react';
-import { v4 as uuid } from 'uuid';
+import { useDispatch } from 'react-redux';
 
+import { createList } from '../../../actions/listActions';
 import './style.css';
 
-function ListForm({ onAdd }) {
+function ListForm() {
 
+    const dispatch = useDispatch();
     const [item, setItem] = useState({
-        name: '',
-        listItems: []
-    })
+        name: ''
+    });
 
     const handleChange = (e) => {
         const {name, value} = e.target;
 
         setItem(prevList => (
             {...prevList,
-                id: uuid(),
                 [name]: value}
-        ))
-    }
+        ));
+    };
 
     const onSubmit = (e) => {
 
         e.preventDefault();
-
-        onAdd(item)
-
+        dispatch(createList(item));
         setItem({
-            name: '',
-            listItems: []
-        })
+            name: ''
+        });
 
-    }
+    };
 
     return (
         <div className="center">

@@ -1,39 +1,28 @@
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import ListItem from "./ListItem/ListItem";
 import ListInput from "./ListInput/ListInput";
+import { deleteList } from '../../../actions/listActions';
 
 import './style.css';
 
-function Todo({ list, onDelete }) {
+function Todo({ indevidualList }) {
 
-    const [ltItem, setLtItem] = useState(list.listItems);
-
-    const onAdd = (item) => {
-        setLtItem(prevItems => (
-            [...prevItems, item]
-        ))
-    }
-
-    const onRemove = (id) => {
-        setLtItem( prevItems => (
-            prevItems.filter(item => item.id !== id)
-        ))
-    }
+    const dispatch = useDispatch();
 
     return (
         <div className="listBox">
-            <h2>{ list.name }</h2>
-            <ListInput onAdd={onAdd} />
+            <h2>{ indevidualList.name }</h2>
+            <ListInput id={indevidualList._id} />
             <ul className="chckList">
-                {ltItem.map(lItem => (
-                    <ListItem key={ltItem.id} lItem={ lItem } onRemove={onRemove} />
+                {indevidualList.list.map(item => (
+                    <ListItem key={item._id} item={ item } listId={indevidualList._id} />
                 ))}
             </ul>
-            <div className="listBtn">
-                    
-                    <button onClick={() => onDelete(list.id)}><RiDeleteBin6Line /></button>
+            <div className="listBtn"> 
+                    <button onClick={() => dispatch(deleteList(indevidualList._id))}><RiDeleteBin6Line /></button>
             </div>
         </div>
     )

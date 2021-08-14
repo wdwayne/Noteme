@@ -1,26 +1,26 @@
-import { GoPlus } from 'react-icons/go';
 import { useState } from 'react';
-import { v4 as uuid } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { GoPlus } from 'react-icons/go';
 
+import { createItem } from '../../../../actions/listActions';
 import './style.css'
 
-function ListInput({ onAdd }) {
-
+function ListInput({ id }) {
+    const dispatch = useDispatch();
     const [itemName, setItemName] = useState('');
 
     const handleSubmit = (e) => {
 
         e.preventDefault();
 
-        const newItem = {id: uuid(), itemName: itemName}
-
-        onAdd(newItem);
+        const newItem = {name: itemName};
+        dispatch(createItem(id, newItem));
         setItemName('');
     }
 
     return (
         <form className="itemForm" onSubmit={handleSubmit} autoComplete="off">
-                <input type="text" name="item" 
+                <input type="text" name="name" 
                 placeholder="Add item...." 
                 value={itemName} 
                 onChange={(e) => {setItemName(e.target.value)}}

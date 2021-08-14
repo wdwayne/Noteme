@@ -1,21 +1,20 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { CgRemoveR } from 'react-icons/cg';
-import { useState } from 'react';
 
+import { deleteItem } from '../../../../actions/listActions';
 import './style.css'
 
-function ListItem({ lItem, onRemove }) {
+function ListItem({ item, listId }) {
 
-    const [checked, setChecked] = useState(false)
+    const dispatch = useDispatch()
 
-    const handleCheck = (e) => {
-        setChecked(e.target.checked)
-    }
+    
 
     return (
-        <li className={`chckItem ${checked && 'checkedItem'}`}>
-            <input type="checkbox" onChange={handleCheck} />
-            {lItem.itemName}
-            <button onClick={() => onRemove(lItem.id)}><CgRemoveR /></button>
+        <li className='chckItem'>
+            {item.name}
+            <button onClick={() => dispatch(deleteItem(listId, item._id))}><CgRemoveR /></button>
         </li>
     )
 }
